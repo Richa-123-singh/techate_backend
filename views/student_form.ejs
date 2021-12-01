@@ -1,0 +1,79 @@
+<% include ./partials/header %>
+<section id="main-content">
+        <section class="wrapper">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class="page-header"><i class="fa fa fa-bars"></i> Student Form</h3>
+              <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                <li><i class="fa fa-bars"></i> Forms</li>
+              </ol>
+            </div>
+          </div>
+          <!-- page start-->
+          <div class="container">
+                <% if(error && error.length > 0) { %>
+                    <div class="alert alert-danger">
+                      <p><%= error %></p>
+                    </div>
+                    <% } else if(success && success.length >0) { %>
+                    <div class="alert alert-success">
+                      <p><%= success %></p>
+                    </div>
+                    <% } %>
+            <div class="col-lg-12">
+              <div class="recent">
+                <h3>Enter Details</h3>
+              </div>
+              <div id="errormessage"></div>
+              <form action="/add_student" method="POST" role="form" enctype="multipart/form-data" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control" id="name" placeholder="Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" required/>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" required/>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="registration" id="registration" placeholder="Registration No" min=1000 data-msg="Please enter at least 8 digits" required/>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                        <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Mobile" min=1000000000 max=9999999999 data-msg="Please enter valid mobile number" required/>
+                        <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                        <input type="text" class="form-control" name="section" id="section" placeholder="Section"/>
+                        <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                        <div class="validation"></div>
+                </div>
+                <label>Upload Image: </label>
+                <input id="image" type="file" name="image" accept="image/*" required/>
+                <div class="text-center"><button type="submit" class="btn btn-primary btn-lg">Add Student</button></div>
+              </form>
+            </div>
+          </div>
+          <!-- page end-->
+        </section>
+      </section>
+      <!--main content end-->
+    </section>
+    <!-- container section end -->
+    <!-- javascripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+    <script src="contactform/contactform.js"></script>
+  
+  
+  </body>
+  
+  </html>

@@ -1,0 +1,62 @@
+<% include ./partials/header %>
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa fa-bars"></i> Search Result</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                    <li><i class="fa fa-bars"></i> Search</li>
+                </ol>
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="container">
+            <% if(error && error.length > 0) { %>
+            <div class="alert alert-danger">
+                <p><%= error %></p>
+            </div>
+            <% } else if(success && success.length >0) { %>
+            <div class="alert alert-success">
+                <p><%= success %></p>
+            </div>
+            <% } %>
+            <% if(data) { %>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="info-box white-bg">
+                            <form action='/edit_images' method="POST">
+                                <span style="display: none">
+                                    <input type="text" value="<%= data.registration %>" name="registration"/>
+                                    </span>
+                                        <button type="submit">
+                                        <h3>Registration No : <%= data.registration %></h3>
+                                        </button>
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            <% } else { %>
+                <br/>
+                <h3>No User Found!!</h3>
+            <% } %>
+                <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+</section>
+<!-- container section end -->
+<!-- javascripts -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- nice scroll -->
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+<!--custome script for all page-->
+<script src="js/scripts.js"></script>
+<script src="contactform/contactform.js"></script>
+
+
+</body>
+
+</html>
